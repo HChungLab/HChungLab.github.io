@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cNMF for Single-Cell Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consensus Non-negative Matrix Factorization (cNMF) for Single-Cell Data</h1>
+    <p>Consensus Non-negative Matrix Factorization (cNMF) is a computational method used to analyze single-cell RNA sequencing (scRNA-seq) data to identify gene programs. Gene programs refer to sets of genes that exhibit coordinated expression patterns and are indicative of underlying biological processes or cell states.</p>
+    
+    <h2>Key Concepts and Steps in cNMF for Single-Cell Data</h2>
+    
+    <h3>1. Data Matrix Construction</h3>
+    <p>The input to cNMF is a gene expression matrix, where rows represent genes, columns represent cells, and entries represent the expression levels of genes in each cell.</p>
+    
+    <h3>2. Non-negative Matrix Factorization (NMF)</h3>
+    <p>NMF is a dimensionality reduction technique that factorizes the gene expression matrix <code>V</code> (size <code>m × n</code>) into two lower-dimensional matrices <code>W</code> (size <code>m × k</code>) and <code>H</code> (size <code>k × n</code>) such that <code>V ≈ WH</code>.</p>
+    <pre><code>V ≈ W * H</code></pre>
+    <p>Here,</p>
+    <ul>
+        <li><code>V</code> is the original gene expression matrix.</li>
+        <li><code>W</code> is the basis matrix, where each column represents a gene program.</li>
+        <li><code>H</code> is the coefficient matrix, where each row represents the activity of a gene program in each cell.</li>
+    </ul>
+    
+    <h3>3. Running NMF Multiple Times</h3>
+    <p>cNMF involves running NMF multiple times with different initializations to ensure robustness and stability of the factorization. This helps in identifying consistent gene programs across different runs.</p>
+    
+    <h3>4. Consensus Clustering</h3>
+    <p>The results from multiple NMF runs are combined using consensus clustering to determine stable and reproducible gene programs. This step involves clustering the basis vectors (columns of <code>W</code>) from different runs and identifying common patterns.</p>
+    
+    <h3>5. Determining Gene Programs</h3>
+    <p>Gene programs are determined based on the clustered basis vectors. Each gene program consists of a set of genes that show coordinated expression patterns across the cells. The final gene programs represent underlying biological processes or cell states in the single-cell data.</p>
+    
+    <h2>Conclusion</h2>
+    <p>cNMF is a powerful method for identifying gene programs in single-cell RNA sequencing data. By leveraging multiple runs of NMF and consensus clustering, it provides robust and reproducible insights into the underlying biology of cells.</p>
+</body>
+</html>
+
