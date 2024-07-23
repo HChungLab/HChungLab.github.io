@@ -15,6 +15,11 @@
             overflow: hidden;
             background-color: #333;
         }
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
         .navbar a {
             float: left;
             display: block;
@@ -73,6 +78,28 @@
             padding: 2px 4px;
             border-radius: 4px;
         }
+        .dropdown-container {
+            margin: 20px;
+        }
+
+        .dropdown-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .dropdown-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +109,37 @@
     <h1>cNMF Guide</h1>
     <p>To run CNMF, you should first install a new conda environment. </p>
     <p>These can be found at <pre><code>/gpfs/gibbs/project/chung/shared/resources/env_files/</code></pre></p>
+    <p>I would suggest running the code with an environment created with <pre><code>CellBenderEnv.yml</code></pre> Though it is called "CellBenderEnv," it can be used for many tasks other than running cellbender.</p>
+    
+    <div class="dropdown-container">
+        <button class="dropdown-button" onclick="toggleDropdown()">How to set up CellBenderEnv <p style="font-size: 0.6em;">(toggle to hide)</p></button>
+        <div id="dropdown-content" class="dropdown-content">
+            <p style="font-size: 0.8em;">To do this, run: <pre><code>cp /gpfs/gibbs/project/chung/shared/resources/env_files/CellBenderEnv.yml</code></pre></p>
+            <p style="font-size: 0.8em;">Then, in a new terminal started from a jupyter notebook session, from your home directory, run: <pre><code>conda env create -f CellBenderEnv.yml</code></pre></p>
+            <p style="font-size: 0.8em;">Don't forget to subsequently run the ycrc command for updating your list of environments: <pre><code>ycrc_conda_env.sh update</code></pre></p>
+            <p style="font-size: 0.8em;">Then start a new jupyter notebook with CellBenderEnv listed as your environment.</p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleDropdown() {
+            var content = document.getElementById("dropdown-content");
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+
+    
+    
+    <div class="sidebar">
+        <h2>Related Sites</h2>
+        <ul>
+            <li><a href="cnmf-explanation.html">cnmf-explanation</a></li>
+        </ul>
+    </div>
 </body>
 </html>
 
