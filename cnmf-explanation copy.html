@@ -74,11 +74,26 @@
             border-radius: 4px;
         }
     </style>
+    <script>
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+        document.addEventListener('DOMContentLoaded', loadNavbar);
+    </script>
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-    </div>
     <h1>Consensus Non-negative Matrix Factorization (cNMF) for Single-Cell Data</h1>
     <p>Consensus Non-negative Matrix Factorization (cNMF) is a computational method used to analyze single-cell RNA sequencing (scRNA-seq) data to identify gene programs. Gene programs refer to sets of genes that exhibit coordinated expression patterns and are indicative of underlying biological processes or cell states.</p>
     
