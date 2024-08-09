@@ -145,7 +145,7 @@
     
     <h1>Submitting the slurm command</h1>
     <p>First, make sure that you have activated the CellBenderEnv.</p>
-    <p>To submit the slurm command, use <pre><code>sbatch</code></p> followed by the name of the .sh file.</p>
+    <p>To submit the slurm command, use <pre><code>sbatch</code></pre> followed by the name of the .sh file.</p>
         <p>This will immediately output a job ID and will eventually send you an email once the job starts.</p>
         <p> You can check on the status of the job by using the command <pre><core>sacct -j [job-id]</core></pre></p>
         <p> The job will end in one of two ways: it will fail or it will complete.  In both cases, an output file is generated.  You can specify the name of the output file in the header of the slurm command file, but the default file name is <pre><code>slurm-[job id]</code></pre></p>
