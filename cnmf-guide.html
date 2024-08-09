@@ -114,7 +114,7 @@
     <div class="dropdown-container">
         <button class="dropdown-button" onclick="toggleDropdown()">How to set up CellBenderEnv <p style="font-size: 0.6em;">(toggle to hide)</p></button>
         <div id="dropdown-content" class="dropdown-content">
-            <p style="font-size: 0.8em;">To do this, run: <pre><code>cp /gpfs/gibbs/project/chung/shared/resources/env_files/CellBenderEnv.yml</code></pre></p>
+            <p style="font-size: 0.8em;">To do this, run: <pre><code>cp /gpfs/gibbs/project/chung/shared/resources/env_files/CellBenderEnv.yml ~</code></pre></p>
             <p style="font-size: 0.8em;">Then, in a new terminal started from a jupyter notebook session, from your home directory, run: <pre><code>conda env create -f CellBenderEnv.yml</code></pre></p>
             <p style="font-size: 0.8em;">Don't forget to subsequently run the ycrc command for updating your list of environments: <pre><code>ycrc_conda_env.sh update</code></pre></p>
             <p style="font-size: 0.8em;">Then start a new jupyter notebook with CellBenderEnv listed as your environment.</p>
@@ -132,6 +132,16 @@
         }
     </script>
 
+    <h1>Using the general cNMF function</h1>
+    <p>Copy the general cNMF function to your home directory: <pre><code>cp /gpfs/gibbs/project/chung/shared/resources/ComputationalFiles/generalCNMFfunction/generalCNMF.py ~~</code></pre></p>
+    <p>Also copy the the necessary slurm command file to your home directory: <pre><code>cp /gpfs/gibbs/project/chung/shared/resources/ComputationalFiles/generalCNMFfunction/SlurmCommandGeneralCNMF.sh ~~</code></pre></p>
+    <p> In your home directory, create a directory that will contain your adata objects.</p>
+    <p>Edit the <pre><code>SlurmCommandGeneralCNMF.sh</code> file with two arguments following the function call.</p>
+    <ol>
+        <li>The first is the full path of the directory that contains the adata objects. </li>
+        <li>The second is the name of the adata object. </li>
+    </ol>
+    <p>Thus, an example of a valid call function call is <pre><code>python /home/acm228/testingGeneralCNMFFunction/generalCNMF.py /vast/palmer/home.mccleary/acm228/testingGeneralCNMFFunction/adataObjects CLImmune_cells7122024.h5ad</code></pre>.  This line of code will go into the Slurm command file</p>
     
     
     <div class="sidebar">
