@@ -153,6 +153,10 @@
     
     <h1>Outputs of the general cNMF function</h1>
     <p>The function outputs a gene-program-annotated anndata file.  To plot these programs spatially, I would suggest to open a jupyter notebook and use the <pre><code>sc.pl.spatial</code></pre>plotting function.</p>
+
+    <h1>Note about k-values</h1>
+    <p>The general CNMF function does analysis in one fell-swoop using a k-value (number of gene programs) determined using an optimal ratio of error and stability, as determined by some internal calculations.</p>
+    <p>If you find that the gene programs produced are not meaningful, you can manually set the k-value in the <pre><code>generalCNMF.py</code></pre> file, towards the bottom.  As to how to determine a proper k-value yourself, you can do so by looking at the k selection plot .png file stored in the cnmf_outputs folder in your adata objects directory.</p>
     <div class="sidebar">
         <h2>Related Sites</h2>
         <ul>
