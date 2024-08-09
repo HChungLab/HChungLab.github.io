@@ -151,6 +151,8 @@
         <p> The job will end in one of two ways: it will fail or it will complete.  In both cases, an output file is generated.  You can specify the name of the output file in the header of the slurm command file, but the default file name is <pre><code>slurm-[job id]</code></pre></p>
         <p> This file will have the applicable error messages as well as other output messages that the python file you are running may generate.</p>
     
+    <h1>Outputs of the general cNMF function</h1>
+    <p>The function outputs a gene-program-annotated anndata file.  To plot these programs spatially, I would suggest to open a jupyter notebook and use the <pre><code>sc.pl.spatial</code></pre>plotting function.</p>
     <div class="sidebar">
         <h2>Related Sites</h2>
         <ul>
