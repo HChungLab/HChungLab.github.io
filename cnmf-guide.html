@@ -143,6 +143,8 @@
     </ol>
     <p>Thus, an example of a valid function call is <pre><code>python /home/acm228/testingGeneralCNMFFunction/generalCNMF.py /vast/palmer/home.mccleary/acm228/testingGeneralCNMFFunction/adataObjects CLImmune_cells7122024.h5ad</code></pre>  This line of code will go into the Slurm command file</p>
     
+    <h1>Note: the adata object must contain raw counts in a layer of their own, or in .X </h1>
+
     <h1>Submitting the slurm command</h1>
     <p>First, make sure that you have activated the CellBenderEnv.  To do this, run the command <pre><code>conda activate CellBenderEnv</code></pre></p>
     <p>To submit the slurm command, use <pre><code>sbatch</code></pre> followed by the name of the .sh file.</p>
